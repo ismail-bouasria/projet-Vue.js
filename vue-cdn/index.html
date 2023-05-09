@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1>Binding</h1>
+        <h2>Interpolation</h2>
+            {{ message}}
+            <ul>
+                <li>{{ tableau[0] }}</li>
+                <li>{{ tableau['1'] }}</li>
+                <li>{{ tableau["2"] }}</li>
+            </ul>
+            {{msg}}
+            <div v-html="msg"></div>
+            <p> {{personne}}</p>
+            <ul>
+                <li>{{ personne.nom }}</li>
+                <li>{{ personne['prenom'] }}</li>
+            </ul>
+            <p>{{tableau.lenght}}</p>
+            <p>{{direBonjour()}}</p>
+            <p>{{bonjourNom()}}</p>
+            <a :href="lien">France Football</a>
+           <p> <a v-bind="lienTarget">France Football nouvel onglet</a> </p> 
+    </div>
+ 
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="script.js"></script>
+</body>
+</html>
