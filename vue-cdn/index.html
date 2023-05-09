@@ -96,6 +96,15 @@
             <button :disabled="isDisabled" @click="activeDesactiveButton">Cliquer 1</button>
             <button :disabled="!isDisabled" @click="activeDesactiveButton">Cliquer 2</button>
            </div>
+           <h1>Two way binding</h1>
+            <label for="nom">Nom</label>
+           <input type="text"  id="nom" @click="alertNom" v-model="nom"> {{nom}}
+           <button > afficher </button>
+           <div>
+            <label for="">Nom</label>
+            <input type="text" id="nom" @keyup.enter="alertNom">
+
+           </div>
     </div>
  
     <script src="https://unpkg.com/vue@next"></script>

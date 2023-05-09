@@ -52,6 +52,15 @@ const App = Vue.createApp({
 
         activeDesactiveButton(){
            this.isDisabled = !this.isDisabled;
+        },
+        alertNom(event){
+            this.nom = event.target.value
+            alert(this.nom)
+        },
+    },
+    watch: {
+        nom(newValue,holdValue){
+            console.log(newValue,holdValue);
         }
     }
 })
