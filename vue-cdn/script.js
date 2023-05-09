@@ -19,7 +19,18 @@ const App = Vue.createApp({
                 {id:101,nom:'Abruzzi',prenom:'John'},
                 {id:102,nom:'Wick',prenom:'John'},
                 {id:103,nom:'Wick',prenom:'John'},
-            ]
+            ],
+            couleur:'white',
+            couleurBg:'red',
+            style:{
+                color:'Skyblue',
+            backgroundColor:'tomato'},
+            font:{
+                fontWeight:'bold',
+                fontStyle:'italic',
+
+            },
+            isDisabled : true,
         };
     },
     methods:{
@@ -31,6 +42,16 @@ const App = Vue.createApp({
         },
         bonjourNom(){
             return `bonjour ${this.nom}`
+        },
+        getStyle(){
+            return this.style
+        },
+        sayHello(){
+            return alert('Hello')
+        },
+
+        activeDesactiveButton(){
+           this.isDisabled = !this.isDisabled;
         }
     }
 })

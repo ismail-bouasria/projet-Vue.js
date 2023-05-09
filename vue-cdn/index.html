@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="app">
@@ -64,11 +65,37 @@
                 <template v-else>
                     {{elt}} est impaire
                 </template>
-
-
             </li>
-
            </ul>
+
+           <h1> Les classes Binding</h1>
+           <p :class="{'rouge':nom === 'John'}">
+            {{nom}}
+           </p>
+           <p :class="{'rouge' : nom !== 'John', 'bleu': nom === 'John'}"> {{nom}}</p>
+           <p :class="nom === 'John'?'rouge':'bleu'">{{nom}}</p>
+
+           <ul>
+            <template v-for="(elemt,key) in personnes">
+                <p :class="key % 2 === 0 ? 'rouge':'bleu'">
+                    {{elemt.nom}} 
+                </p>
+            </template>
+           </ul>
+           <h1> Styles Binding</h1>
+           <p :style="{ backgroundColor: couleurBg, color: couleur}"> {{nom}}</p>
+           <p :style="style"> {{nom}}</p>
+           <p :style="getStyle()"> {{nom}}</p>
+           <p :style="[style,font]">{{nom}}</p>
+
+           <h1> Event Binding</h1>
+           <button v-on:click="sayHello">Cliquer</button>
+           <button @click="sayHello">Cliquer</button>
+
+           <div>
+            <button :disabled="isDisabled" @click="activeDesactiveButton">Cliquer 1</button>
+            <button :disabled="!isDisabled" @click="activeDesactiveButton">Cliquer 2</button>
+           </div>
     </div>
  
     <script src="https://unpkg.com/vue@next"></script>
