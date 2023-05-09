@@ -13,7 +13,13 @@ const App = Vue.createApp({
             lienTarget: {
                 href: 'https://francefootball.fr',
                 target:'_blank'
-            }
+            },
+            personnes: [
+                {id:100,nom:'Wick',prenom:'John'},
+                {id:101,nom:'Abruzzi',prenom:'John'},
+                {id:102,nom:'Wick',prenom:'John'},
+                {id:103,nom:'Wick',prenom:'John'},
+            ]
         };
     },
     methods:{

@@ -27,7 +27,48 @@
             <p>{{direBonjour()}}</p>
             <p>{{bonjourNom()}}</p>
             <a :href="lien">France Football</a>
-           <p> <a v-bind="lienTarget">France Football nouvel onglet</a> </p> 
+           <p> <a v-bind="lienTarget">France Football nouvel onglet</a> </p>
+           <h1>Directives structurelles</h1> 
+           <h2>v-for</h2>
+           <ul>
+            <li v-for="elt in tableau">
+                {{elt}}
+            </li>
+            <li v-for="(elt,index) in tableau">
+               {{index}} : {{elt}}
+            </li>
+            <li v-for="(elt,key,index) in personne"> 
+                {{index}} : {{key}} : {{elt}}
+            </li>
+           </ul>
+           <ul>
+            <li v-for="elt in personnes">
+                {{elt.id}} {{elt.nom}}  {{elt.prenom}}
+            </li>
+
+            <li v-for="elt in personnes">
+               <template v-for="(attr,value) in elt">
+                    {{attr}} : {{value}}
+               </template>
+            </li>
+           </ul>
+           <h2> v-if</h2>
+           <p v-if="tableau[0] > 0"> {{tableau[0]}} est positif </p>
+           <p v-else-if="tableau[0] ==0 "> {{tableau[0]}} est nul</p>
+           <p v-else> {{tableau[0]}} est negatif</p>
+           <ul>
+            <li v-for="elt in tableau">
+                <template v-if="elt % 2 == 0">
+                    {{elt}} est paire
+                </template>
+                <template v-else>
+                    {{elt}} est impaire
+                </template>
+
+
+            </li>
+
+           </ul>
     </div>
  
     <script src="https://unpkg.com/vue@next"></script>
